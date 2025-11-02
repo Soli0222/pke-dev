@@ -1,0 +1,21 @@
+image:
+  pullPolicy: IfNotPresent
+
+ipam:
+  mode: "cluster-pool"
+  operator:
+    clusterPoolIPv4PodCIDRList: ["10.26.0.0/16"]
+
+tunnelProtocol: "" 
+routingMode: ""
+ipv4NativeRoutingCIDR: "10.26.0.0/16"
+enableIPv4Masquerade: true
+enableIPv4: true
+enableIPv6: false
+
+hubble:
+  relay:
+    enabled: true
+    prometheus:
+      serviceMonitor:
+        enabled: true

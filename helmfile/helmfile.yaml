@@ -1,0 +1,20 @@
+repositories:
+  - name: cilium
+    url: https://helm.cilium.io/
+  - name: argo
+    url: https://argoproj.github.io/argo-helm
+
+releases:
+  - name: cilium
+    namespace: kube-system
+    chart: cilium/cilium
+    version: 1.18.3
+    values:
+      - values/cilium.gotmpl
+  - name: argocd
+    namespace: argocd
+    createNamespace: true
+    chart: argo/argo-cd
+    version: 9.0.5
+    values:
+      - values/argo-cd.gotmpl
